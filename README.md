@@ -1,5 +1,5 @@
 
-# RUTUBE test assignment
+# Тестовое задание от RUTUBE
 
 *Read this in other languages: [English](README.en.md)*
 
@@ -66,10 +66,10 @@ API для добавления сотрудников, где указывае�
   go run main.go
 ```
 
-
+ # TODO
 ## Запуск тестов
 
-To run tests, run the following command
+Чтобы запустить тесты, выполните следующую команду
 
 ```bash
   go test
