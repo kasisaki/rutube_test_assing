@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"gorm.io/driver/sqlite"
@@ -27,14 +27,14 @@ type Subscription struct {
 	NotifyDays int  // Дней до дня рождения для оповещения
 }
 
-var db *gorm.DB
+var Db *gorm.DB
 
 func init() {
 	var err error
-	db, err = gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
+	Db, err = gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
-	db.AutoMigrate(&User{}, &Employee{}, &Subscription{})
+	Db.AutoMigrate(&User{}, &Employee{}, &Subscription{})
 }

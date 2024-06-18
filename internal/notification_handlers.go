@@ -1,23 +1,23 @@
-package main
+package internal
 
 import (
 	"github.com/go-mail/mail"
 	"time"
 )
 
-func sendBirthdayNotifications() {
+func SendBirthdayNotifications() {
 	var subscriptions []Subscription
-	db.Find(&subscriptions)
+	Db.Find(&subscriptions)
 
 	for _, subscription := range subscriptions {
 		var employee Employee
 		var user User
 
-		if err := db.First(&employee, subscription.EmployeeID).Error; err != nil {
+		if err := Db.First(&employee, subscription.EmployeeID).Error; err != nil {
 			continue
 		}
 
-		if err := db.First(&user, subscription.UserID).Error; err != nil {
+		if err := Db.First(&user, subscription.UserID).Error; err != nil {
 			continue
 		}
 
