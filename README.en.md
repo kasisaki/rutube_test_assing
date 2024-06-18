@@ -66,12 +66,21 @@ Start the server
   go run main.go
 ```
 
-# TODO 
-## Running Tests
+# Description of tests
+### • auth_test.go:
 
-To run tests, run the following command
+Tests login and authentication functions, checks the correctness of JWT generation and authorization verification.
+### • subscribe_handlers_test.go:
 
-```bash
-  go test
+Tests the functions addEmployee, subscribe and unsubscribe, check for adding employees, subscribe and unsubscribe.
+### • Notification_handlers_test.go:
+
+Tests the sendBirthdayNotifications function. This test requires more extensive testing to verify mail delivery, which can be done through mocks or logs.
+## Running tests
+
+To run the tests run this command
+
+``` bash
+ go test ./test -v
 ```
 
